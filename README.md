@@ -10,7 +10,7 @@ our [paper](https://arxiv.org/abs/TBD_ID) which has been accepted at [WACV 2024]
 If you use the code of our paper for scientific research, please consider citing
 
 ```latex
-@inproceedings{naumannParcel3DShapeReconstruction2023,
+@inproceedings{naumannTAMPAR2024,
     author    = {Naumann, Alexander and Hertlein, Felix and D\"orr, Laura and Furmans, Kai},
     title     = {TAMPAR: Vision-based Tampering Detection for Parcels in Postal Supply Chain Logistics},
     booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
