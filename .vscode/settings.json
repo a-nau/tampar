@@ -1,0 +1,28 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "python.formatting.provider": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+    },
+    // "black-formatter.path": [
+    //     "/opt/conda/bin/python"
+    // ],
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.egg-info": true
+    },
+    "python.autoComplete.extraPaths": [
+        "./src"
+    ],
+    "python.analysis.extraPaths": [
+        "./src"
+    ],
+    "notebook.output.textLineLimit": 200
+}

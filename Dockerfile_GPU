@@ -1,0 +1,25 @@
+FROM pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel
+
+# See https://github.com/NVIDIA/nvidia-docker/issues/1632#issuecomment-1112667716
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+
+RUN apt-get -y update
+
+# see https://serverfault.com/a/992421
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ="America/New_York"
+
+RUN apt-get install -y libopencv-dev python3-opencv git cmake 
+RUN apt-get install -y graphviz libmagickwand-dev
+
+RUN mkdir -p /project
+WORKDIR /project
+
+RUN pip install --upgrade pip
+RUN pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu113/torch1.10/index.html
+COPY requirements.txt /project/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+# prevent kornia error https://bobbyhadz.com/blog/python-importerror-cannot-import-name-required-from-typing-extensions
+RUN pip install typing-extensions --upgrade
+

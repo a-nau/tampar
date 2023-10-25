@@ -1,0 +1,1 @@
+Backbones are copied from https://github.com/facebookresearch/omni3d/tree/main/cubercnn/modeling/backbone

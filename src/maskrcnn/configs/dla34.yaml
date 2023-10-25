@@ -1,0 +1,14 @@
+_BASE_: "./Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "https://dl.fbaipublicfiles.com/cubercnn/omni3d/cubercnn_DLA34_FPN.pth"
+  BACKBONE:
+    FREEZE_AT: 4
+    NAME: 'build_dla_from_vision_fpn_backbone'
+  DLA:
+    TYPE: 'dla34'
+  FPN:
+    IN_FEATURES: ['p2', 'p3', 'p4', 'p5', 'p6']
+DATASETS:
+  TRAIN: ("parcel3d_train", )
+  TEST: ("parcel3d_validation", "parcel3d_real_validation" )
+OUTPUT_DIR: "./output/dla/01"

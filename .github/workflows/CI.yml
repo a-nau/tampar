@@ -1,0 +1,16 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/a-nau/tampar:latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run tests
+        run: python -m unittest

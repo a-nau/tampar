@@ -1,0 +1,15 @@
+_BASE_: "./Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
+  BACKBONE:
+    NAME: "build_resnet_fpn_backbone"
+    FREEZE_AT: 4
+  RESNETS:
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+    DEPTH: 50
+  FPN:
+    IN_FEATURES: ["res2", "res3", "res4", "res5"]
+DATASETS:
+  TRAIN: ("parcel3d_train", )
+  TEST: ("parcel3d_validation", "parcel3d_real_validation" )
+OUTPUT_DIR: "./output/resnet50/02"
