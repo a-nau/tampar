@@ -15,9 +15,7 @@ If you use the code of our paper for scientific research, please consider citing
     title     = {TAMPAR: Vision-based Tampering Detection for Parcels in Postal Supply Chain Logistics},
     booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
     month     = {January},
-    year      = {2024},
-    pages     = {TBD},
-    note      = {to appear in}
+    year      = {2024}
 }
 ```
 
